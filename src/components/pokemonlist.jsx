@@ -26,7 +26,6 @@ const Pokemonlist = () => {
 	useEffect(() => {
 		getPokemon();
 	}, []);
-	console.log(allPokemon);
 
 	return (
 		<div className="flex flex-row flex-wrap justify-evenly mx-auto my-12 w-10/12">
