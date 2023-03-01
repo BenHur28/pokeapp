@@ -1,10 +1,12 @@
 import React from "react";
-import Searchbar from "../components/searchbar";
+import Pokemonlist from "../components/pokemonlist";
+import Topbar from "../components/topbar";
 
 const Home = () => {
 	return (
 		<div>
-			<Searchbar />
+			<Topbar />
+			<Pokemonlist />
 		</div>
 	);
 };
