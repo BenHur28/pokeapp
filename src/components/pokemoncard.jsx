@@ -47,7 +47,7 @@ const pokemonType = (pokemon) => {
 const PokemonCard = (props) => {
 	return (
 		<div className="flex flex-col border-2 mb-8 py-4 px-3">
-			<Link to={`/${props.name.toLowerCase()}`}>
+			<Link to={`/${props.name}`}>
 				<img className="w-36 h-36 mx-5 mb-5" src={props.image} alt="" />
 			</Link>
 			<span className="text-xs ml-5">#{props.id}</span>
