@@ -4,7 +4,7 @@ const Topbar = () => {
 	return (
 		<div className="flex justify-center bg-gradient-to-r from-white to-red-500 items-center">
 			<div className="flex flex-row justify-between w-10/12">
-				<div className="flex flex-row">
+				<div className="flex flex-row items-center">
 					<span className="text-2xl font-bold pr-5">Pokedex</span>
 					<img
 						className="h-10 w-10"

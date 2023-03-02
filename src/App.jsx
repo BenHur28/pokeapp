@@ -14,7 +14,7 @@ const router = createBrowserRouter(
 
 const App = () => {
 	return (
-		<div>
+		<div className="font-lato">
 			<RouterProvider router={router} />
 		</div>
 	);
