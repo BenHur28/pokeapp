@@ -6,6 +6,7 @@ const Pokemonlist = () => {
 	const base_url = "https://pokeapi.co/api/v2/";
 
 	const [allPokemon, setAllPokemon] = useState([]);
+	const [search, setSearch] = useState("");
 
 	const getPokemon = async () => {
 		const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");

@@ -1,7 +1,9 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import PokemonType from "../components/pokemontype";
+import SearchBar from "../components/searchBar";
 import Topbar from "../components/topbar";
+
 // loader function
 export const pokemonLoader = async ({ params }) => {
 	const { pokemonName } = params;
@@ -30,6 +32,7 @@ const Pokemoninfo = () => {
 	return (
 		<>
 			<Topbar />
+			<SearchBar />
 			<div className="flex flex-col items-center mx-auto mt-16 w-10/12">
 				<h1 className="text-4xl">
 					{pokemon.name.replace(/^./, (str) => str.toUpperCase())} #{pokemon.id.toString().padStart(3, "0")}
