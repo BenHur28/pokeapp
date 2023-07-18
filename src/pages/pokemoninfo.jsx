@@ -17,13 +17,10 @@ export const pokemonLoader = async ({ params }) => {
 const pokemonStats = (pokemonStats) => {
 	return (
 		<div className="flex flex-row justify-between">
-			<span className="font-bold text-xl">{pokemonStats.stat.name.toUpperCase()}</span> <span className="font-bold text-xl">{pokemonStats.base_stat}</span>
+			<span className="font-bold text-xl">{pokemonStats.stat.name.toUpperCase()}</span>{" "}
+			<span className="font-bold text-xl">{pokemonStats.base_stat}</span>
 		</div>
 	);
-};
-
-const pokemonAbilities = (pokemonAbilities) => {
-	return <div className="">{pokemonAbilities.ability.name}</div>;
 };
 
 const Pokemoninfo = () => {
@@ -37,30 +34,20 @@ const Pokemoninfo = () => {
 				<h1 className="text-4xl">
 					{pokemon.name.replace(/^./, (str) => str.toUpperCase())} #{pokemon.id.toString().padStart(3, "0")}
 				</h1>
-				<div className="flex flex-row justify-around mt-24 w-3/5">
-					<img className="h-80 w-80 bg-slate-200 rounded-md" src={pokemon.sprites.other["official-artwork"].front_default} alt="" />
-					<div className="bg-cyan-400 flex flex-row flex-wrap w-1/3 h-11/12 rounded-md">
-						<div className="flex flex-col justify-start my-auto w-1/3 ml-5">
-							<h2 className="text-2xl mb-3 text-white ">Height</h2>
-							<span className="text-xl">{pokemon.height}</span>
-						</div>
-						<div className="flex flex-col justify-start my-auto w-1/3 ml-5">
-							<h2 className="text-2xl mb-3 text-white">Weight</h2>
-							<span className="text-xl">{pokemon.weight}</span>
-						</div>
-						<div className="flex flex-col justify-start  w-1/3 ml-5">
-							<h2 className="text-2xl mb-3 text-white">Abilities</h2>
-							<span className="text-xl">{pokemon.abilities.map((pokemon) => pokemonAbilities(pokemon))}</span>
-						</div>
-					</div>
-				</div>
-				<div className="flex flex-row justify-around mt-12 w-3/5">
-					<div className="bg-slate-300 flex flex-col w-1/3 px-3 py-3 rounded-md">
-						<div>{pokemon.stats.map((pokemon) => pokemonStats(pokemon))}</div>
-					</div>
-					<div className="w-1/3">
+				<div>
+					<img
+						className="h-80 w-80 bg-slate-200 rounded-md my-4"
+						src={pokemon.sprites.other["official-artwork"].front_default}
+						alt=""
+					/>
+					<div className="bg-red-200 rounded-md w-100 text-center my-4 p-2">
 						<h2 className="mb-5 font-bold text-2xl">Type</h2>
-						<div className="flex flex-row justify-start h-1/6">{pokemon.types.map((pokemon) => PokemonType(pokemon))}</div>
+						<div className="flex flex-row justify-around h-1/6 mx-auto">
+							{pokemon.types.map((pokemon) => PokemonType(pokemon))}
+						</div>
+					</div>
+					<div className="bg-slate-200 flex flex-col 100 px-3 py-3 rounded-md my-4">
+						<div>{pokemon.stats.map((pokemon) => pokemonStats(pokemon))}</div>
 					</div>
 				</div>
 			</div>
